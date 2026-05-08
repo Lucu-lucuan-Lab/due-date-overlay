@@ -1,0 +1,54 @@
+{
+  "name": "service-guard-react",
+  "version": "1.0.0",
+  "description": "Professional React Service Lock / Payment Guard with minimal glassmorphism design.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.4.1",
+    "jest-environment-jsdom": "^30.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "ts-jest": "^29.4.9",
+    "tsup": "^8.3.6",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "react",
+    "overlay",
+    "guard",
+    "lock",
+    "service-lock",
+    "payment-guard",
+    "glassmorphism"
+  ],
+  "author": "Aditya Rizky Ramadhan",
+  "license": "MIT"
+}

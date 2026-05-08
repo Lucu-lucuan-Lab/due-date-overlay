@@ -1,0 +1,175 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lockedContent {
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeIn 0.3s ease-out;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.overlay.light {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.overlay.dark {
+  background-color: rgba(15, 23, 42, 0.7);
+  /* Slate-900 with opacity */
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #ef4444;
+  /* Warning Red */
+}
+
+.overlay.dark .modal {
+  background-color: #1e293b;
+  /* Slate-800 */
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Rim light */
+  border-top: 4px solid #ef4444;
+  /* Warning Red */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  /* Stronger shadow for dark mode */
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.warningIcon {
+  width: 3rem;
+  height: 3rem;
+  color: #ef4444;
+  /* Red-500 */
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.overlay.dark .title {
+  color: #f8fafc;
+}
+
+.message {
+  margin: 0 0 1.5rem;
+  /* Reduced because of new meta section */
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #1e293b;
+  /* Slate-800 (Better contrast than Slate-700) */
+}
+
+.metaInfo {
+  margin: 0 0 2.5rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #64748b;
+  /* Slate-500 */
+  text-align: left;
+}
+
+.overlay.dark .metaInfo {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #94a3b8;
+  /* Slate-400 */
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.metaRow:last-child {
+  margin-bottom: 0;
+}
+
+.metaLabel {
+  font-weight: 500;
+}
+
+.overlay.dark .message {
+  color: #f1f5f9;
+  /* Slate-100 (Better contrast than Slate-200) */
+}
+
+.button {
+  background-color: #f1f5f9;
+  /* Slate-100 */
+  color: #0f172a;
+  /* Slate-900 */
+  border: 1px solid #cbd5e1;
+  /* Slate-300 */
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  /* Concentric corners: smaller than modal's 12px */
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #e2e8f0;
+  /* Slate-200 */
+}
+
+.overlay.dark .button {
+  background-color: #3b82f6;
+  /* Blue-500 */
+  color: #ffffff;
+  border: none;
+}
+
+.overlay.dark .button:hover {
+  background-color: #2563eb;
+  /* Blue-600 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
